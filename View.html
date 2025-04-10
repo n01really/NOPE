@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Videospelare</title>
+    <link rel="stylesheet" href="css/Index.css">
+  </head>
+  <body>
+    <header>
+      <h1>Spela Video</h1>
+    </header>
+  
+    <div class="content">
+      <nav>
+        <h3>Videor</h3>
+        <ul>
+            <li><a href="Index.html">Hem</a></li>
+            <li><a href="VideoLinks.html">Videos</a></li>
+            <li><a href="CatsAndZombies.html">Cats and Zombies</a></li>
+        </ul>
+      </nav>
+  
+      <main>
+        <video id="videoPlayer" width="720" height="480" controls>
+          Din webbläsare stödjer inte videouppspelning.
+        </video>
+      </main>
+  
+      <aside>
+        <h3>Tips</h3>
+        <p>Tryck på fullskärm för bästa upplevelse.</p>
+      </aside>
+    </div>
+  
+    <footer>
+      &copy; 2025 Mitt Företag
+    </footer>
+  
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const videoFile = params.get('Video');
+  
+      if (videoFile) {
+        document.getElementById('videoPlayer').src = 'Video/' + videoFile;
+      } else {
+        document.querySelector('main').innerHTML = '<p>Ingen video angiven.</p>';
+      }
+    </script>
+  </body>
+  </html>
